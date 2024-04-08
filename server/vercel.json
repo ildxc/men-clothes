@@ -7,5 +7,5 @@
             "config": { "includeFiles": ["src/**"] }
         }
     ],
-    "rewrites": [{ "source": "src/(.*)", "destination": "/api" }]
+    "rewrites": [{ "source": "src/(.*)", "destination": "/" }]
 }
