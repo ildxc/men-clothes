@@ -12,3 +12,4 @@ export const getClothes = () =>  Clothes.find();
 export const getClothesById = (id) => Clothes.findById(id);
 export const createClothes = (clothes) => Clothes.create(clothes);
 export const updateClothes = (id, clothes) => Clothes.findByIdAndUpdate(id, clothes, { new: true });
+export const getClothesByType = (type) => Clothes.find({ type: type });

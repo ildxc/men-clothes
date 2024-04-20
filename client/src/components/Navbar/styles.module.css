@@ -1,0 +1,42 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0rem;
+}
+
+.actions{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.actions a{
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.actions input{
+    flex: .6;
+    padding: 0.5rem;
+    border: 1px solid #222222;
+    border-radius: 0.5rem;
+}
+
+.buttonsContainer{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.buttonsContainer button{
+    transition-duration: 300ms;
+}
+
+.buttonsContainer button:hover{
+    color: #222222;
+}
+
+.links{
+    display: flex;
+    justify-content: space-around;
+}
