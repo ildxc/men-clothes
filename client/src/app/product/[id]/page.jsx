@@ -38,7 +38,7 @@ export default function ProductPage({ params }) {
                     <div>
                         {product.colors.map((color) => (
                             <img
-                                key={color._id}
+                                key={color.name}
                                 src={color.image}
                                 alt={color.name}
                                 onClick={() => setImage(color)}
@@ -68,7 +68,7 @@ export default function ProductPage({ params }) {
                                 </p>
                             </div>
                             <button
-                                onClick={() => handleAddToCart(color)}
+                                onClick={() => handleAddToCart(image)}
                                 className="bg-green-500 text-white rounded-md w-fit px-5 py-2 hover:bg-green-600 transition-all"
                             >
                                 Add to cart
