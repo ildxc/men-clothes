@@ -22,11 +22,11 @@ export const getUsersById = async (id, setUsers) => {
     }
 }
 
-export const createUsers = async (users) => {
+export const createUser = async (users) => {
     try {
         const response = await axios.post('http://localhost/api/users', users)
         if (response.status === 200){
-            console.log('Users created')
+            console.log('User created')
         }
     } catch(error){
         console.log(error)

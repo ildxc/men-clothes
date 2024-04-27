@@ -7,9 +7,9 @@ const userSchema = new mongoose.Schema({
     role: { type: String, required: true },
 });
 
-export const User = mongoose.model("User", userSchema);
+export const User = mongoose.model("Users", userSchema);
 export const getUsers = () =>  User.find();
 export const getUserById = (id) => User.findById(id);
 export const createUser = (user) => User.create(user);
 export const updateUser = (id, user) => User.findByIdAndUpdate(id, user, { new: true })
-export const loginUser = async (email, password) => User.find({email: email, password: password})
+export const loginUser = async (email, password) => User.findOne({email: email, password: password})

@@ -18,7 +18,6 @@ export const getSingleWear = async(req, res) => {
     try{
         const { id } = req.params      
         const wear = await getClothesById(id)
-        console.log(wear)
         res.status(200).json(wear)
     } catch(error){
         res.status(404).json({ message: error.message });
