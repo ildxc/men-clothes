@@ -1,9 +1,10 @@
 import axios from "axios";
 import { saveUser } from "@/redux/features/auth/authSlice";
+import { server } from "@/helpers/server";
 
 export const login = async (email, password, dispatch) => {
     try {
-        const response = await axios.post('http://localhost/api/auth/login', {
+        const response = await server.post('/api/auth/login', {
             email: email,
             password: password
         })

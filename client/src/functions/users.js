@@ -1,8 +1,8 @@
-import axios from 'axios';
+import { server } from '@/helpers/server';
 
 export const getUsers = async (setUsers) => {
     try {
-        const response = await axios.get('http://localhost/api/users')
+        const response = await server.get('/api/users')
         if (response.status === 200){
             setUsers(response.data)
         }
@@ -13,7 +13,7 @@ export const getUsers = async (setUsers) => {
 
 export const getUsersById = async (id, setUsers) => {
     try {
-        const response = await axios.get(`http://localhost/api/users/${id}`)
+        const response = await server.get(`/api/users/${id}`)
         if (response.status === 200){
             setUsers(response.data)
         }
@@ -24,7 +24,7 @@ export const getUsersById = async (id, setUsers) => {
 
 export const createUser = async (users) => {
     try {
-        const response = await axios.post('http://localhost/api/users', users)
+        const response = await server.post('/api/users', users)
         if (response.status === 200){
             return 'Register succesful, you can now login'
         }
