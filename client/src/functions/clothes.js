@@ -2,7 +2,7 @@ import { server } from '@/helpers/server';
 
 export const getClothes = async (setClothes) => {
     try {
-        const response = await server.get('/api/clothes')
+        const response = await server.get('/clothes')
         if (response.status === 200){
             setClothes(response.data)
         }
@@ -13,7 +13,7 @@ export const getClothes = async (setClothes) => {
 
 export const getClothesById = async (id, setClothes) => {
     try {
-        const response = await server.get(`/api/clothes/${id}`)
+        const response = await server.get(`/clothes/${id}`)
         if (response.status === 200){
             setClothes(response.data)
         }
@@ -24,7 +24,7 @@ export const getClothesById = async (id, setClothes) => {
 
 export const createClothes = async (clothes) => {
     try {
-        const response = await server.post('/api/clothes', clothes)
+        const response = await server.post('/clothes', clothes)
         if (response.status === 200){
         }
     } catch(error){
@@ -34,7 +34,7 @@ export const createClothes = async (clothes) => {
 
 export const updateClothes = async (id, clothes) => {
     try {
-        const response = await server.put(`/api/clothes/${id}`, clothes)
+        const response = await server.put(`/clothes/${id}`, clothes)
         if (response.status === 200){
         }
     } catch(error){
@@ -44,7 +44,7 @@ export const updateClothes = async (id, clothes) => {
 
 export const getClothesByType = async (type, setClothes) => {
     try {
-        const response = await server.get(`/api/clothes?type=${type}`)
+        const response = await server.get(`/clothes?type=${type}`)
         if (response.status === 200){
             setClothes(response.data)
         }

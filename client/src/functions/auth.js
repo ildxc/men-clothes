@@ -4,7 +4,7 @@ import { server } from "@/helpers/server";
 
 export const login = async (email, password, dispatch) => {
     try {
-        const response = await server.post('/api/auth/login', {
+        const response = await server.post('/auth/login', {
             email: email,
             password: password
         })
