@@ -1,4 +1,5 @@
 import { getUsers, getUserById, createUser, updateUser } from "../models/users.js";
+import { hashFunction } from "../utils/index.js";
 
 export const getAllUsers = async (req, res) => {
     try {
@@ -22,7 +23,8 @@ export const getSingleUser = async(req, res) => {
 export const addUser = async (req, res) => {
     try {
         const user = req.body;
-        const newUser = await createUser(user);
+        delete user.confirmPassword;
+        const newUser = await createUser({...user, role: "user", password: hashFunction(user.password)});
         res.status(201).json(newUser);
     } catch (error) {
         res.status(409).json({ message: error.message });

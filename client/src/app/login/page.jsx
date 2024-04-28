@@ -3,13 +3,18 @@
 import { login } from "@/functions/auth";
 import { selectUser } from "@/redux/features/auth/authSlice";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 
 export default function LoginPage(){
+    const router = useRouter()
     const [error, setError] = useState('')
     const authUser = useSelector(selectUser)
+    if (authUser.email !== ''){
+        router.push('/')
+    }
     const dispatch = useDispatch()
     const [user, setUser] = useState({
         email: '',
@@ -31,6 +36,7 @@ export default function LoginPage(){
             }
             else {
                 setError('')
+                router.push('/')
             }
         })
     }

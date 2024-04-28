@@ -11,14 +11,14 @@ const authSlice = createSlice({
     initialState,
     reducers: {
         saveUser: (state, action) => {
-            state = action.payload
+            state.email = action.payload.email
+            state.firstName = action.payload.firstName
+            state.lastName = action.payload.lastName
         },
         logout: (state, _) => {
-            state = {
-                email: '',
-                firstName: '',
-                lastName: ''
-            }
+            state.email = ''
+            state.firstName = ''
+            state.lastName = ''
         }
     }
 })

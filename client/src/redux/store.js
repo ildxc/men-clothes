@@ -9,9 +9,10 @@ import {
     PURGE,
     REGISTER,
 } from "redux-persist";
-import storage from "redux-persist/lib/storage";
+import { storage } from "@/helpers";
 import cart from "./features/cart/cartSlice";
 import auth from './features/auth/authSlice'
+import search from './features/search/searchSlice'
 
 const persistConfig = {
     key: "root",
@@ -20,7 +21,8 @@ const persistConfig = {
 
 const rootReducer = combineReducers({
     cart,
-    auth
+    auth,
+    search
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

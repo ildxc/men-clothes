@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
             <body>
                 <Providers>
                     <Navbar />
-                    {children}
+                    <div className="pt-[180px]">{children}</div>
                 </Providers>
             </body>
         </html>

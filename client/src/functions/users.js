@@ -26,9 +26,13 @@ export const createUser = async (users) => {
     try {
         const response = await axios.post('http://localhost/api/users', users)
         if (response.status === 200){
-            console.log('User created')
+            return 'Register succesful, you can now login'
         }
     } catch(error){
         console.log(error)
+        if (error.response.data.message.startsWith('E11000 duplicate key error collection:')){
+            return 'Email already in use'
+        }
+        return 'An error ocurried'
     }
 }

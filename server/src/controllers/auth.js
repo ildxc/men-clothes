@@ -3,16 +3,19 @@ import { hashFunction } from "../utils/index.js";
 
 export const login = async (req, res) => {
     try {
-        console.log(req.body);
         const { email, password } = req.body;
-        console.log(hashFunction(password))
-        console.log('67f04b4ed1ca702d57c2448199a2096845b2cc05596ba3e23f0ae70225a06103')
         const user = await loginUser(email, hashFunction(password));
-        console.log(await getUsers())
         if (user) {
-            res.status(200).json();
+            res.status(200).json({
+                message: "User logged in successfully",
+                user: {
+                    firstName: user.firstName,
+                    lastName: user.lastName,
+                    email: user.email,
+                },
+            });
         } else {
-            res.status(403).json({ message: "Invalid credentials", user });
+            res.status(403).json({ message: "Invalid credentials" });
         }
     } catch (error) {
         console.log(error);
