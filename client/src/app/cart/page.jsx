@@ -9,7 +9,6 @@ import { selectUser } from "@/redux/features/auth/authSlice";
 export default function CartPage() {
     const cart = useSelector(selectCart);
     const user = useSelector(selectUser)
-    console.log(cart)
     const dispatch = useDispatch();
     const total = cart.reduce(
         (acc, item) => acc + item.price * item.quantity,

@@ -26,7 +26,6 @@ export const createClothes = async (clothes) => {
     try {
         const response = await server.post('/api/clothes', clothes)
         if (response.status === 200){
-            console.log('Clothes created')
         }
     } catch(error){
         console.log(error)
@@ -37,7 +36,6 @@ export const updateClothes = async (id, clothes) => {
     try {
         const response = await server.put(`/api/clothes/${id}`, clothes)
         if (response.status === 200){
-            console.log('Clothes updated')
         }
     } catch(error){
         console.log(error)

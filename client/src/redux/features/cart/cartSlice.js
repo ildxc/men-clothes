@@ -22,7 +22,6 @@ const cartSlice = createSlice({
             const existingProduct = state.items.find(
                 (item) => item.id === action.payload.id && item.color.name === action.payload.color.name
             );
-            console.log(state.items[0])
             if (existingProduct) {
                 if (existingProduct.quantity > 1) {
                     existingProduct.quantity -= 1;

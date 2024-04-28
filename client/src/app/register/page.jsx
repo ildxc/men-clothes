@@ -54,7 +54,6 @@ export default function RegisterPage(){
             
             })
         }
-        console.log(user)
     }
 
     return (
