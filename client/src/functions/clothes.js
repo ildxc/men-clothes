@@ -2,7 +2,7 @@ import { server } from '@/helpers/server';
 
 export const getClothes = async (setClothes) => {
     try {
-        const response = await server.get('http://localhost/api/clothes')
+        const response = await server.get('/api/clothes')
         if (response.status === 200){
             setClothes(response.data)
         }
@@ -13,7 +13,7 @@ export const getClothes = async (setClothes) => {
 
 export const getClothesById = async (id, setClothes) => {
     try {
-        const response = await server.get(`http://localhost/api/clothes/${id}`)
+        const response = await server.get(`/api/clothes/${id}`)
         if (response.status === 200){
             setClothes(response.data)
         }
